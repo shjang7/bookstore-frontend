@@ -42,5 +42,6 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "react-devtools": "^4.2.1"
-  }
+  },
+  "proxy": "https://rails-magic-bookstore-suh.herokuapp.com/"
 }
