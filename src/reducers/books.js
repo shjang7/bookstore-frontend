@@ -10,7 +10,7 @@ export default (state = [], action) => {
     case GET_BOOKS:
       return payload;
     case CREATE_BOOK:
-      return [...state, book];
+      return [...state, payload];
     case REMOVE_BOOK:
       return [...state.filter(data => data !== book)];
     default:

@@ -22,7 +22,26 @@ export const getBooks = () => async dispatch => {
   }
 };
 
-export const createBook = book => ({ type: CREATE_BOOK, book });
+export const createBook = book => async dispatch => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+  try {
+    const { data } = await axios.post('books', book, config);
+
+    dispatch({
+      type: CREATE_BOOK,
+      payload: data
+    });
+  } catch ({ response }) {
+    dispatch({
+      type: BOOK_ERROR,
+      payload: { msg: response.statusText, status: response.status },
+    });
+  }
+};
 export const removeBook = book => ({ type: REMOVE_BOOK, book });
 
 

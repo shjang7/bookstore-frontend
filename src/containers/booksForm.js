@@ -34,7 +34,7 @@ const BooksForm = ({ createBook }) => {
     event.preventDefault();
     if (checkBlank()) return;
 
-    const newBook = { bookId: generateId(), title, category };
+    const newBook = { title, category };
     createBook(newBook);
     setTitle('');
     setCategory('');

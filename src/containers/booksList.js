@@ -27,7 +27,7 @@ const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
       <div className="books-list">
         {filteredBooks.map(book => (
           <Book
-            key={book.bookId}
+            key={book.id}
             {...book}
             remove={() => handleRemoveBook(book)}
           />
@@ -48,7 +48,7 @@ BooksList.defaultProps = { books: [{}] };
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      bookId: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
     }),
