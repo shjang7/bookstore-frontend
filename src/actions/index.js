@@ -42,7 +42,20 @@ export const createBook = book => async dispatch => {
     });
   }
 };
-export const removeBook = book => ({ type: REMOVE_BOOK, book });
 
+export const removeBook = id => async dispatch => {
+  try {
+    await axios.delete(`books/${id}`);
+    dispatch({
+      type: REMOVE_BOOK,
+      payload: id,
+    });
+  } catch ({ response }) {
+    dispatch({
+      type: BOOK_ERROR,
+      payload: { msg: response.statusText, status: response.status },
+    });
+  }
+};
 
 export const changeFilter = filter => ({ type: CHANGE_FILTER, filter });

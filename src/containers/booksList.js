@@ -8,10 +8,10 @@ import CategoryFilter from '../components/categoryFilter';
 const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
   useEffect(() => {
     getBooks();
-  }, [getBooks]);
+  }, [getBooks, removeBook]);
 
-  const handleRemoveBook = (book) => {
-    removeBook(book);
+  const handleRemoveBook = (bookId) => {
+    removeBook(bookId);
   };
 
   const handleFilterChange = ({ target: { value } }) => {
@@ -29,7 +29,7 @@ const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
           <Book
             key={book.id}
             {...book}
-            remove={() => handleRemoveBook(book)}
+            remove={() => handleRemoveBook(book.id)}
           />
         ))}
       </div>
