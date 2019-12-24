@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook, changeFilter } from '../actions';
+import { getBooks, removeBook, changeFilter } from '../actions';
 import Book from '../components/book';
 import CategoryFilter from '../components/categoryFilter';
 
-const BooksList = ({ books, removeBook, filter, changeFilter }) => {
+const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
+  useEffect(() => {
+    getBooks();
+  }, [getBooks]);
+
   const handleRemoveBook = (book) => {
     removeBook(book);
   };
@@ -51,10 +55,11 @@ BooksList.propTypes = {
   ),
   filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  getBooks: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
 
 export default connect(
   ({ books, filter }) => ({ books, filter }),
-  { removeBook, changeFilter },
+  { getBooks, removeBook, changeFilter },
 )(BooksList);
