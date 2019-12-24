@@ -12,8 +12,6 @@ The [original page](https://github.com/shjang7/react-bookstore) was built for fr
 - JavaScript (ES6)
 - CSS 3
 
-### ✨ [Live Demo](https://react-bookstore-suh-martin.herokuapp.com/)
-
 ## Usage
 
 > Clone the repository to your local machine
