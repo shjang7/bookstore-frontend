@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
 import options from '../assets/manifest.json';
-import { generateId, capitalize } from '../assets/utils';
+import { capitalize } from '../assets/utils';
 
 const BooksForm = ({ createBook }) => {
   const [title, setTitle] = useState('');
@@ -34,7 +34,7 @@ const BooksForm = ({ createBook }) => {
     event.preventDefault();
     if (checkBlank()) return;
 
-    const newBook = { bookId: generateId(), title, category };
+    const newBook = { title, category };
     createBook(newBook);
     setTitle('');
     setCategory('');
