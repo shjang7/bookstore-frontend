@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook, changeFilter } from '../actions';
+import { getBooks, removeBook, changeFilter } from '../actions';
 import Book from '../components/book';
 import CategoryFilter from '../components/categoryFilter';
 
-const BooksList = ({ books, removeBook, filter, changeFilter }) => {
-  const handleRemoveBook = (book) => {
-    removeBook(book);
+const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
+  useEffect(() => {
+    getBooks();
+  }, [getBooks, removeBook]);
+
+  const handleRemoveBook = (bookId) => {
+    removeBook(bookId);
   };
 
   const handleFilterChange = ({ target: { value } }) => {
@@ -23,9 +27,9 @@ const BooksList = ({ books, removeBook, filter, changeFilter }) => {
       <div className="books-list">
         {filteredBooks.map(book => (
           <Book
-            key={book.bookId}
+            key={book.id}
             {...book}
-            remove={() => handleRemoveBook(book)}
+            remove={() => handleRemoveBook(book.id)}
           />
         ))}
       </div>
@@ -44,17 +48,18 @@ BooksList.defaultProps = { books: [{}] };
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
-      bookId: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
     }),
   ),
   filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
+  getBooks: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
 };
 
 export default connect(
   ({ books, filter }) => ({ books, filter }),
-  { removeBook, changeFilter },
+  { getBooks, removeBook, changeFilter },
 )(BooksList);
