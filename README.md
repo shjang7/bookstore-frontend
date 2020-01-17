@@ -1,8 +1,16 @@
-<h1 align="center">Welcome to Magic Bookstore 👋</h1>
+<h1 align="center">Welcome to Bookstore Frontend 👋</h1>
 
-This project is a bookstore app with React & Redux.
+This project is a bookstore app with React & Redux. <br />
+The [original page](https://github.com/shjang7/react-bookstore) was built for front-end side only, but this time it built full-stack connecting with [back-end](https://github.com/shjang7/bookstore-backend) side.
 
-The [original page](https://github.com/shjang7/react-bookstore) was built for front-end side only, but this time it connects with back-end side.
+![](./public/shot_top.png)
+![](./public/shot_bottom.png)
+
+## Function description
+
+- Add book
+- Delete book
+- View books list
 
 ## Built With
 
@@ -20,25 +28,38 @@ The [original page](https://github.com/shjang7/react-bookstore) was built for fr
 $ git clone https://github.com/shjang7/bookstore-frontend.git
 ```
 
-> cd into the directory, install dependencies, start(build and run)
+> change directory into the directory
 
 ```sh
 $ cd bookstore-frontend
+```
+
+> Install dependencies
+
+```sh
 $ npm install
+```
+
+> Open backend-side web server before running app
+
+```sh
+https://rails-bookstore-backend-suh.herokuapp.com
+```
+
+> Start - build and run
+
+```sh
 $ npm run start
 ```
 
 > If it doesn't open automatically, open `http://localhost:3000` using your browser.
-
-## Test
-
-After cloning the repo, navigate to the project directory and then run the test command `npm test`.
 
 ## Author
 
 👤 **Suhyeon Jang**
 
 - Github: [@shjang7](https://github.com/shjang7)
+- Linked in: [@shjang](https://www.linkedin.com/in/shjang/)
 
 ## 🤝 Contributing
 
@@ -56,4 +77,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/shjang7/bookstore-frontend/blob/master/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
