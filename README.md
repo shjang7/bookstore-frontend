@@ -1,10 +1,9 @@
 <h1 align="center">Welcome to Bookstore Frontend 👋</h1>
 
 This project is a bookstore app with React & Redux. <br />
-The [original page](https://github.com/shjang7/react-bookstore) was built for front-end side only, but this time it built full-stack connecting with [back-end](https://github.com/shjang7/bookstore-backend) side.
+The [original page](https://github.com/shjang7/react-bookstore) was built for front-end side only as a pair-coding work, but this time it built full-stack connecting with [back-end](https://github.com/shjang7/bookstore-backend) side.
 
-![](./public/shot_top.png)
-![](./public/shot_bottom.png)
+![](./public/screenshot.png)
 
 ## Function description
 
@@ -42,9 +41,7 @@ $ npm install
 
 > Open backend-side web server before running app
 
-```sh
-https://rails-bookstore-backend-suh.herokuapp.com
-```
++ [https://rails-bookstore-backend-suh.herokuapp.com](https://rails-bookstore-backend-suh.herokuapp.com)
 
 > Start - build and run
 
@@ -59,7 +56,8 @@ $ npm run start
 👤 **Suhyeon Jang**
 
 - Github: [@shjang7](https://github.com/shjang7)
-- Linked in: [@shjang](https://www.linkedin.com/in/shjang/)
+- LinkedIn: [@shjang](https://www.linkedin.com/in/shjang/)
+- Twitter: [@shjang12](https://twitter.com/shjang12)
 
 ## 🤝 Contributing
 

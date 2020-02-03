@@ -1,23 +1,27 @@
+/* orange: #fd6a02; */
+/* fire: #fda50f; */
+/* bronze: #b1560f; */
+
 body {
   font: 500 14px/1.2 Montserrat;
-  background-color: #eee;
+  background-color: #fda50faa;
 }
 
 .app {
   max-width: 1400px;
   margin: 50px auto;
   padding-bottom: 30px;
-  background-color: #f7f7f7;
+  background-color: #b1560f;
 }
 
 .panel-bg {
   max-width: 1400px;
   height: 95px;
-  background-color: #ffffff;
+  background-color: #b1560f;
 }
 
-.bg-white {
-  background-color: #ffffff;
+.bg-for-bookslist {
+  background-color: #fd6a02aa;
 }
 
 .d-flex,
@@ -40,8 +44,12 @@ body {
 }
 
 .books-list {
-  background-color: #f7f7f7;
+  background-color: #b1560fdd;
   padding: 50px 100px 10px;
+}
+
+.error {
+  padding-left: 100px;
 }
 
 .nav-bar {
@@ -60,7 +68,7 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #0290ff;
+  color: white;
 }
 
 .nav-bar .books {
@@ -73,7 +81,7 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
-  color: #121212;
+  color: white;
 }
 
 .nav-bar .categories {
@@ -87,7 +95,7 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
-  color: #121212;
+  color: white;
 }
 
 .filter {
@@ -104,21 +112,21 @@ body {
   padding: 1.5rem;
   margin: 20px 0;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: #b1560f;
 }
 
 .book .category {
   font: 700 14px Montserrat;
   min-height: 28px;
   opacity: 0.5;
-  color: #121212;
+  color: white;
 }
 
 .book .title {
   font: 700 22px RobotoSlab;
   min-height: 29px;
   letter-spacing: -0.2px;
-  color: #121212;
+  color: white;
   margin-bottom: 15px;
 }
 
@@ -140,7 +148,7 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #121212;
+  color: white;
 }
 
 .current-lesson {
@@ -152,13 +160,14 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.4px;
-  color: #121212;
+  color: white;
   margin-bottom: 23px;
 }
 
 .remove button {
   border: 0;
-  background-color: #fff;
+  background-color: #964000;
+  color: white;
   box-sizing: border-box;
   padding: 10px 5px;
 }
@@ -174,7 +183,7 @@ button .update-progress {
   line-height: normal;
   letter-spacing: 0.5px;
   text-align: center;
-  color: #ffffff;
+  color: white;
 }
 
 button:hover {
@@ -194,7 +203,10 @@ button.simulation-button:hover {
 
 .add-book {
   margin: 0 100px;
-  background-color: #f7f7f7;
+  background-color: #fd6a02aa;
+  padding: .1rem 1rem 0 1rem;
+  border-radius: 5px;
+  color: white;
 }
 
 .add-book input.title {
@@ -227,7 +239,7 @@ button.simulation-button:hover {
   height: 45px;
   border: 0;
   border-radius: 5px;
-  background-color: #0290ff;
+  background-color: #964000;
 }
 
 .add-book .submit {
@@ -246,7 +258,7 @@ button.simulation-button:hover {
 
 .alert {
   font: 700 14px RobotoSlab;
-  color: #0290ff;
+  color: white;
 }
 
 .add-book input.title {
@@ -255,6 +267,16 @@ button.simulation-button:hover {
 
 .filter .title {
   display: inline-block;
+}
+
+@media (max-width: 959.98px) {
+  .add-book .category {
+    margin-left: 0;
+  }
+
+  .add-book input.title {
+    width: 100%;
+  }
 }
 
 @media (max-width: 779.98px) {
@@ -266,6 +288,10 @@ button.simulation-button:hover {
   .books-list {
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  .error {
+    padding-left: 50px;
   }
 
   .book .title {
@@ -281,16 +307,8 @@ button.simulation-button:hover {
     margin: 0 50px;
   }
 
-  .add-book .category {
-    margin-left: 0;
-  }
-
   .d-md-flex {
     display: block;
-  }
-
-  .add-book input.title {
-    width: 100%;
   }
 }
 
@@ -319,6 +337,10 @@ button.simulation-button:hover {
   .books-list {
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .error {
+    padding-left: 30px;
   }
 
   .filter {
