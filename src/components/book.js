@@ -9,7 +9,7 @@ const Book = ({ title, category, remove }) => {
         <div className="category">{capitalize(category)}</div>
         <div className="title">{title}</div>
         <div className="remove">
-          <button onClick={remove}>remove</button>
+          <button onClick={() => remove}>remove</button>
         </div>
       </div>
       <div className="order-2">

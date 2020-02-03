@@ -5,10 +5,11 @@ import { getBooks, removeBook, changeFilter } from '../actions';
 import Book from '../components/book';
 import CategoryFilter from '../components/categoryFilter';
 
-const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
+const BooksList = ({ books, errors, getBooks, removeBook, filter, changeFilter }) => {
   useEffect(() => {
     getBooks();
-  }, [getBooks, removeBook]);
+  // eslint-disable-next-line
+  }, []);
 
   const handleRemoveBook = async (bookId) => {
     await removeBook(bookId);
@@ -38,12 +39,13 @@ const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
   return (
     <div className="bg-white">
       <CategoryFilter filter={filter} handleChange={handleFilterChange} />
+      <div>{ errors ? errors : ''}</div>
       {renderBooks()}
     </div>
   );
 };
 
-BooksList.defaultProps = { books: [{}] };
+BooksList.defaultProps = { books: [{}], filter: '' };
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(
@@ -60,6 +62,6 @@ BooksList.propTypes = {
 };
 
 export default connect(
-  ({ books, filter }) => ({ books, filter }),
+  ({ books, filter, errors }) => ({ books, filter, errors }),
   { getBooks, removeBook, changeFilter },
 )(BooksList);
