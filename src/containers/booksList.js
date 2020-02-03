@@ -37,7 +37,7 @@ const BooksList = ({ books, errors, getBooks, removeBook, filter, changeFilter }
     );
   };
   return (
-    <div className="bg-white">
+    <div className="bg-for-bookslist">
       <CategoryFilter filter={filter} handleChange={handleFilterChange} />
       <div className="error">{ errors ? errors : ''}</div>
       {renderBooks()}
