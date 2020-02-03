@@ -10,8 +10,8 @@ const BooksList = ({ books, getBooks, removeBook, filter, changeFilter }) => {
     getBooks();
   }, [getBooks, removeBook]);
 
-  const handleRemoveBook = (bookId) => {
-    removeBook(bookId);
+  const handleRemoveBook = async (bookId) => {
+    await removeBook(bookId);
   };
 
   const handleFilterChange = ({ target: { value } }) => {

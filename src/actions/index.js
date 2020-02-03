@@ -9,7 +9,7 @@ import {
 
 export const getBooks = () => async dispatch => {
   try {
-    const { data } = await axios.get('books');
+    const { data } = await axios.get('/books');
     dispatch({
       type: GET_BOOKS,
       payload: data,
@@ -29,7 +29,7 @@ export const createBook = book => async dispatch => {
     },
   };
   try {
-    const { data } = await axios.post('books', book, config);
+    const { data } = await axios.post('/books', book, config);
 
     dispatch({
       type: CREATE_BOOK,
@@ -45,7 +45,7 @@ export const createBook = book => async dispatch => {
 
 export const removeBook = id => async dispatch => {
   try {
-    await axios.delete(`books/${id}`);
+    await axios.delete(`/books/${id}`);
     dispatch({
       type: REMOVE_BOOK,
       payload: id,
