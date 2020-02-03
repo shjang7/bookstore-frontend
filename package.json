@@ -45,5 +45,5 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "react-devtools": "^4.2.1"
   },
-  "proxy": "https://rails-bookstore-backend-suh.herokuapp.com/"
+  "proxy": "https://rails-bookstore-backend-suh.herokuapp.com"
 }
