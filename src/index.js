@@ -8,7 +8,13 @@ import './assets/style.css';
 import reducers from './reducers';
 import App from './components/app';
 
-const store = createStore(reducers, applyMiddleware(ReduxThunk));
+const initialState = {
+  books: [],
+  filter: 'all',
+  errors: ''
+};
+
+const store = createStore(reducers, initialState, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
   <Provider store={store}>
